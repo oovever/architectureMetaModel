@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated architecture -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="architecture.presentation.ArchitectureModelWizardID"
+            name="%_UI_ArchitectureModelWizard_label"
+            class="architecture.presentation.ArchitectureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArchitectureModelFile.gif">
+         <description>%_UI_ArchitectureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated architecture -->
+      <editor
+            id="architecture.presentation.ArchitectureEditorID"
+            name="%_UI_ArchitectureEditor_label"
+            icon="icons/full/obj16/ArchitectureModelFile.gif"
+            extensions="architecture"
+            class="architecture.presentation.ArchitectureEditor"
+            contributorClass="architecture.presentation.ArchitectureActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
