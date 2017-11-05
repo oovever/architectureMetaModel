@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link architecture.Component#getName <em>Name</em>}</li>
  *   <li>{@link architecture.Component#getDependence <em>Dependence</em>}</li>
  *   <li>{@link architecture.Component#getComponentDependence <em>Component Dependence</em>}</li>
+ *   <li>{@link architecture.Component#getClass_ <em>Class</em>}</li>
+ *   <li>{@link architecture.Component#getPortOfComponent <em>Port Of Component</em>}</li>
  * </ul>
  *
  * @see architecture.ArchitecturePackage#getComponent()
@@ -82,5 +84,37 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	EList<architecture.System> getComponentDependence();
+
+	/**
+	 * Returns the value of the '<em><b>Class</b></em>' containment reference list.
+	 * The list contents are of type {@link architecture.Class}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Class</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Class</em>' containment reference list.
+	 * @see architecture.ArchitecturePackage#getComponent_Class()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<architecture.Class> getClass_();
+
+	/**
+	 * Returns the value of the '<em><b>Port Of Component</b></em>' containment reference list.
+	 * The list contents are of type {@link architecture.Port}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port Of Component</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Of Component</em>' containment reference list.
+	 * @see architecture.ArchitecturePackage#getComponent_PortOfComponent()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Port> getPortOfComponent();
 
 } // Component

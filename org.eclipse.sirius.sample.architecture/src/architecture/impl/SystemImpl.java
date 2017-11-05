@@ -5,6 +5,7 @@ package architecture.impl;
 import architecture.ArchitecturePackage;
 import architecture.Component;
 
+import architecture.Port;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link architecture.impl.SystemImpl#getDependence <em>Dependence</em>}</li>
  *   <li>{@link architecture.impl.SystemImpl#getSystemDependence <em>System Dependence</em>}</li>
  *   <li>{@link architecture.impl.SystemImpl#getSubsystem <em>Subsystem</em>}</li>
+ *   <li>{@link architecture.impl.SystemImpl#getPortOfSystem <em>Port Of System</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,6 +101,16 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 	 * @ordered
 	 */
 	protected EList<architecture.System> subsystem;
+
+	/**
+	 * The cached value of the '{@link #getPortOfSystem() <em>Port Of System</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortOfSystem()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Port> portOfSystem;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,6 +205,18 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Port> getPortOfSystem() {
+		if (portOfSystem == null) {
+			portOfSystem = new EObjectContainmentEList<Port>(Port.class, this, ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM);
+		}
+		return portOfSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -200,6 +224,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
 			case ArchitecturePackage.SYSTEM__SUBSYSTEM:
 				return ((InternalEList<?>)getSubsystem()).basicRemove(otherEnd, msgs);
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
+				return ((InternalEList<?>)getPortOfSystem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -222,6 +248,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 				return getSystemDependence();
 			case ArchitecturePackage.SYSTEM__SUBSYSTEM:
 				return getSubsystem();
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
+				return getPortOfSystem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,6 +282,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 				getSubsystem().clear();
 				getSubsystem().addAll((Collection<? extends architecture.System>)newValue);
 				return;
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
+				getPortOfSystem().clear();
+				getPortOfSystem().addAll((Collection<? extends Port>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -281,6 +313,9 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 			case ArchitecturePackage.SYSTEM__SUBSYSTEM:
 				getSubsystem().clear();
 				return;
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
+				getPortOfSystem().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,6 +338,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements architec
 				return systemDependence != null && !systemDependence.isEmpty();
 			case ArchitecturePackage.SYSTEM__SUBSYSTEM:
 				return subsystem != null && !subsystem.isEmpty();
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
+				return portOfSystem != null && !portOfSystem.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

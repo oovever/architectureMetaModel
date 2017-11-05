@@ -7,6 +7,8 @@ import architecture.ArchitectureFactory;
 import architecture.ArchitecturePackage;
 import architecture.Component;
 
+import architecture.Port;
+import architecture.classMember;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -62,6 +64,9 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 			case ArchitecturePackage.ALL_ELEMENTS: return createAllElements();
 			case ArchitecturePackage.COMPONENT: return createComponent();
 			case ArchitecturePackage.SYSTEM: return createSystem();
+			case ArchitecturePackage.PORT: return createPort();
+			case ArchitecturePackage.CLASS: return createClass();
+			case ArchitecturePackage.CLASS_MEMBER: return createclassMember();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +100,36 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
 	public architecture.System createSystem() {
 		SystemImpl system = new SystemImpl();
 		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port createPort() {
+		PortImpl port = new PortImpl();
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public architecture.Class createClass() {
+		ClassImpl class_ = new ClassImpl();
+		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public classMember createclassMember() {
+		classMemberImpl classMember = new classMemberImpl();
+		return classMember;
 	}
 
 	/**

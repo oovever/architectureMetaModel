@@ -149,6 +149,7 @@ public class SystemItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ArchitecturePackage.Literals.SYSTEM__COMPONENT);
 			childrenFeatures.add(ArchitecturePackage.Literals.SYSTEM__SUBSYSTEM);
+			childrenFeatures.add(ArchitecturePackage.Literals.SYSTEM__PORT_OF_SYSTEM);
 		}
 		return childrenFeatures;
 	}
@@ -209,6 +210,7 @@ public class SystemItemProvider
 				return;
 			case ArchitecturePackage.SYSTEM__COMPONENT:
 			case ArchitecturePackage.SYSTEM__SUBSYSTEM:
+			case ArchitecturePackage.SYSTEM__PORT_OF_SYSTEM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -235,6 +237,11 @@ public class SystemItemProvider
 			(createChildParameter
 				(ArchitecturePackage.Literals.SYSTEM__SUBSYSTEM,
 				 ArchitectureFactory.eINSTANCE.createSystem()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ArchitecturePackage.Literals.SYSTEM__PORT_OF_SYSTEM,
+				 ArchitectureFactory.eINSTANCE.createPort()));
 	}
 
 	/**

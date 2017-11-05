@@ -13,6 +13,10 @@
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ComponentDependence" upperBound="-1"
         eType="#//System"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//Class" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portOfComponent" upperBound="-1"
+        eType="#//Port" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,5 +28,16 @@
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subsystem" upperBound="-1"
         eType="#//System" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portOfSystem" upperBound="-1"
+        eType="#//Port" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependence" upperBound="-1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//classMember"/>
+  <eClassifiers xsi:type="ecore:EClass" name="classMember">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

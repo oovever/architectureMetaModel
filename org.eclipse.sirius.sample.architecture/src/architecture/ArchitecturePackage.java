@@ -140,13 +140,31 @@ public interface ArchitecturePackage extends EPackage {
 	int COMPONENT__COMPONENT_DEPENDENCE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Class</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CLASS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Port Of Component</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__PORT_OF_COMPONENT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 3;
+	int COMPONENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -213,13 +231,22 @@ public interface ArchitecturePackage extends EPackage {
 	int SYSTEM__SUBSYSTEM = 4;
 
 	/**
+	 * The feature id for the '<em><b>Port Of System</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__PORT_OF_SYSTEM = 5;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 5;
+	int SYSTEM_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -229,6 +256,127 @@ public interface ArchitecturePackage extends EPackage {
 	 * @ordered
 	 */
 	int SYSTEM_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link architecture.impl.PortImpl <em>Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see architecture.impl.PortImpl
+	 * @see architecture.impl.ArchitecturePackageImpl#getPort()
+	 * @generated
+	 */
+	int PORT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Dependence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__DEPENDENCE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link architecture.impl.classMemberImpl <em>class Member</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see architecture.impl.classMemberImpl
+	 * @see architecture.impl.ArchitecturePackageImpl#getclassMember()
+	 * @generated
+	 */
+	int CLASS_MEMBER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_MEMBER__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>class Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_MEMBER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>class Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_MEMBER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link architecture.impl.ClassImpl <em>Class</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see architecture.impl.ClassImpl
+	 * @see architecture.impl.ArchitecturePackageImpl#getClass_()
+	 * @generated
+	 */
+	int CLASS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__NAME = CLASS_MEMBER__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_FEATURE_COUNT = CLASS_MEMBER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Class</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS_OPERATION_COUNT = CLASS_MEMBER_OPERATION_COUNT + 0;
 
 
 	/**
@@ -307,6 +455,28 @@ public interface ArchitecturePackage extends EPackage {
 	EReference getComponent_ComponentDependence();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link architecture.Component#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Class</em>'.
+	 * @see architecture.Component#getClass_()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Class();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link architecture.Component#getPortOfComponent <em>Port Of Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Port Of Component</em>'.
+	 * @see architecture.Component#getPortOfComponent()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_PortOfComponent();
+
+	/**
 	 * Returns the meta object for class '{@link architecture.System <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,6 +540,80 @@ public interface ArchitecturePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSystem_Subsystem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link architecture.System#getPortOfSystem <em>Port Of System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Port Of System</em>'.
+	 * @see architecture.System#getPortOfSystem()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_PortOfSystem();
+
+	/**
+	 * Returns the meta object for class '{@link architecture.Port <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port</em>'.
+	 * @see architecture.Port
+	 * @generated
+	 */
+	EClass getPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link architecture.Port#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see architecture.Port#getName()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link architecture.Port#getDependence <em>Dependence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dependence</em>'.
+	 * @see architecture.Port#getDependence()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Dependence();
+
+	/**
+	 * Returns the meta object for class '{@link architecture.Class <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Class</em>'.
+	 * @see architecture.Class
+	 * @generated
+	 */
+	EClass getClass_();
+
+	/**
+	 * Returns the meta object for class '{@link architecture.classMember <em>class Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>class Member</em>'.
+	 * @see architecture.classMember
+	 * @generated
+	 */
+	EClass getclassMember();
+
+	/**
+	 * Returns the meta object for the attribute '{@link architecture.classMember#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see architecture.classMember#getName()
+	 * @see #getclassMember()
+	 * @generated
+	 */
+	EAttribute getclassMember_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -455,6 +699,22 @@ public interface ArchitecturePackage extends EPackage {
 		EReference COMPONENT__COMPONENT_DEPENDENCE = eINSTANCE.getComponent_ComponentDependence();
 
 		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__CLASS = eINSTANCE.getComponent_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Of Component</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__PORT_OF_COMPONENT = eINSTANCE.getComponent_PortOfComponent();
+
+		/**
 		 * The meta object literal for the '{@link architecture.impl.SystemImpl <em>System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -503,6 +763,68 @@ public interface ArchitecturePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYSTEM__SUBSYSTEM = eINSTANCE.getSystem_Subsystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Of System</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__PORT_OF_SYSTEM = eINSTANCE.getSystem_PortOfSystem();
+
+		/**
+		 * The meta object literal for the '{@link architecture.impl.PortImpl <em>Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see architecture.impl.PortImpl
+		 * @see architecture.impl.ArchitecturePackageImpl#getPort()
+		 * @generated
+		 */
+		EClass PORT = eINSTANCE.getPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__DEPENDENCE = eINSTANCE.getPort_Dependence();
+
+		/**
+		 * The meta object literal for the '{@link architecture.impl.ClassImpl <em>Class</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see architecture.impl.ClassImpl
+		 * @see architecture.impl.ArchitecturePackageImpl#getClass_()
+		 * @generated
+		 */
+		EClass CLASS = eINSTANCE.getClass_();
+
+		/**
+		 * The meta object literal for the '{@link architecture.impl.classMemberImpl <em>class Member</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see architecture.impl.classMemberImpl
+		 * @see architecture.impl.ArchitecturePackageImpl#getclassMember()
+		 * @generated
+		 */
+		EClass CLASS_MEMBER = eINSTANCE.getclassMember();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS_MEMBER__NAME = eINSTANCE.getclassMember_Name();
 
 	}
 

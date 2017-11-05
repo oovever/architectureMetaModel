@@ -141,6 +141,75 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link architecture.Port} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortItemProvider portItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link architecture.Port}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortAdapter() {
+		if (portItemProvider == null) {
+			portItemProvider = new PortItemProvider(this);
+		}
+
+		return portItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link architecture.Class} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ClassItemProvider classItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link architecture.Class}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createClassAdapter() {
+		if (classItemProvider == null) {
+			classItemProvider = new ClassItemProvider(this);
+		}
+
+		return classItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link architecture.classMember} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected classMemberItemProvider classMemberItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link architecture.classMember}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createclassMemberAdapter() {
+		if (classMemberItemProvider == null) {
+			classMemberItemProvider = new classMemberItemProvider(this);
+		}
+
+		return classMemberItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,6 +311,9 @@ public class ArchitectureItemProviderAdapterFactory extends ArchitectureAdapterF
 		if (allElementsItemProvider != null) allElementsItemProvider.dispose();
 		if (componentItemProvider != null) componentItemProvider.dispose();
 		if (systemItemProvider != null) systemItemProvider.dispose();
+		if (portItemProvider != null) portItemProvider.dispose();
+		if (classItemProvider != null) classItemProvider.dispose();
+		if (classMemberItemProvider != null) classMemberItemProvider.dispose();
 	}
 
 }

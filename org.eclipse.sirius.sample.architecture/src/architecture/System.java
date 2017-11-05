@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link architecture.System#getDependence <em>Dependence</em>}</li>
  *   <li>{@link architecture.System#getSystemDependence <em>System Dependence</em>}</li>
  *   <li>{@link architecture.System#getSubsystem <em>Subsystem</em>}</li>
+ *   <li>{@link architecture.System#getPortOfSystem <em>Port Of System</em>}</li>
  * </ul>
  *
  * @see architecture.ArchitecturePackage#getSystem()
@@ -116,5 +117,21 @@ public interface System extends EObject {
 	 * @generated
 	 */
 	EList<System> getSubsystem();
+
+	/**
+	 * Returns the value of the '<em><b>Port Of System</b></em>' containment reference list.
+	 * The list contents are of type {@link architecture.Port}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port Of System</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Of System</em>' containment reference list.
+	 * @see architecture.ArchitecturePackage#getSystem_PortOfSystem()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Port> getPortOfSystem();
 
 } // System
